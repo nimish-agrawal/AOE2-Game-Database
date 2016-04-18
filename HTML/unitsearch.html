@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>AoX-Home Page</title>
+	<link href="../static/style.css" rel="stylesheet"/>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+
+
+<ul class="navigation">
+
+  <li><a href="index">Home</a></li>
+  <li><a href="tips">Tips</a></li>
+  <li><a href="search">Search Player</a></li>
+  <li><a href="#civs">Civilizations</a></li>
+  <li><a href="unitsearch" class="active">Units</a></li>
+
+  <ul style="float: right; list-style-type: none;">
+  	<li><a href="#login">Login</a></li>
+  	<li><a href="#contact">Contact Us</a></li>
+
+  </ul>
+
+</ul>
+
+ <div id="pseudo"></div>
+<div class="form-style-8">
+  <h2>Search for a Unit</h2>
+  <form>
+    <input type="text" name="uName" placeholder="Unit Name" />
+    <select name="unitType">
+        <option value="" disabled selected>Select Class</option>
+        <option value = "regular">Regular</option>
+        <option value = "unique">Unique</option>
+    </select>
+
+    <select name="civ">
+        <option value = "" disabled selected>In Civilisation</option>
+        <option value="britons">Britons</option>
+        <option value="byzantines">Byzantines</option>
+        <option value="celts">Celts</option>
+        <option value="chinese">Chinese</option>
+        <option value="franks">Franks</option>
+        <option value="goths">Goths</option>
+        <option value="japanese">Japanese</option>
+        <option value="mongols">Mongols</option>
+        <option value="persians">Persians</option>
+        <option value="saracens">Saracens</option>
+        <option value="teutons">Teutons</option>
+        <option value="turks">Turks</option>
+        <option value="vikings">Vikings</option>
+    </select>
+
+    <select name="building">
+        <option value = "" disabled selected>From Building</option>
+        <option value="archeryrange">Archery Range</option>
+        <option value="barracks">Barracks</option>
+        <option value="castle">Castle</option>
+        <option value="monastery">Monastery</option>
+        <option value="siegeworkshop">Siege Workshop</option>
+        <option value="stable">Stable</option>
+        <option value="towncentre">Town Centre</option>
+    </select>
+
+    <input type="button" value="Go!" />
+  </form>
+</div>
+
+
+</div>
+
+</body>
+
+</html>
