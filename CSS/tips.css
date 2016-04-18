@@ -1,0 +1,32 @@
+#top
+{
+	font-size: 18px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: gothic;
+}
+
+#tip
+{
+	position: relative;
+	margin-top: 6px;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: left;
+	padding: 10px;
+	background-color: #d3d3d3;
+	box-shadow: 3px 3px 2px grey;
+}
+
+#topic
+{
+	font-size: 28px;
+}
+
+#sub
+{
+	position: relative;
+	font-size: 14px;
+	font-family: gothic;
+	margin-top: 5px;
+}
