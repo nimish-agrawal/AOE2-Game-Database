@@ -1,0 +1,9 @@
+Branches are created to try new features. changes done to this branch won't affect the master branch. Basically isme experiment karo, successful hota toh master me merge karke ise delete karo.
+
+to clone a branch:
+
+git clone <origin_url> <branch_name>
+
+to push to a branch:
+
+got push <origin_url> <branch_name>
