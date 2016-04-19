@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>AoX-Home Page</title>
+    <link href="../static/style.css" rel="stylesheet" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+
+
+    <ul class="navigation">
+
+        <li><a href="index">Home</a></li>
+        <li><a href="tips" role="button">Tips</a></li>
+        <li><a href="search">Search Player</a></li>
+        <li><a href="civsearch" class="active">Civilizations</a></li>
+        <li><a href="unitsearch">Units</a></li>
+
+        <ul style="float: right; list-style-type: none;">
+            <li><a href="index">Login</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+
+        </ul>
+
+    </ul>
+
+    <div id="findgame">
+
+        <!--   <p>This is your portal to Age of Empires 2 Multiplayer gaming. A solid match making algorithm finds a player closest to your skill level to ensure a match is
+            never one sided. Enter your Player ID below if you're already registered.<br>
+            <br>Player ID &nbsp<input type="text" name="playerID"/><br><br>Password&nbsp<input type="password" name="password"/><br><br><br>
+            <a href="#log" id="login">Go</a>
+            <a href="#newreg" id="new">New User?</a>
+          </p>
+         -->
+        <div id="pseudo"></div>
+        <div class="form-style-8">
+            <h2>Look for a Civilization</h2>
+            <form>
+                <input type="text" name="civ_name" placeholder="Civilization"/>
+                <select name="object">
+                    <option value="" disabled selected>that has</option>
+                    <option value="uniqueunit">Unique Unit</option>
+                    <option value="unit">Unit</option>
+                    <option value="unit_all">All units</option>
+                    <option value="research">Research</option>
+                    <option value="research_all">All researches</option>
+                    <option value="building">Building</option>
+                </select>
+                <select name="civ_build">
+                    <option value="" disabled selected>Select Building</option>
+                    <option value="bombard_tower">Bombard Tower</option>
+                    <option value="fortified_wall">Fortified Wall</option>
+                    <option value="gate">Gate</option>
+                    <option value="guard_tower">Guard Tower</option>
+                    <option value="keep">Keep</option>
+                    <option value="stable">Stable</option>
+                    <option value="stone_wall">Stone Wall</option>
+                </select>
+                <select name="unique_unit">
+                    <option value="" disabled selected>Select Unique Unit</option>
+                    <option value="berserk">Berserk</option>
+                    <option value="cataphract">Cataphract</option>
+                    <option value="chu_ko_nu">Chu Ko Nu</option>
+                    <option value="huskarl">Huskarl</option>
+                    <option value="janissary">Janissary</option>
+                    <option value="longbowman">Longbowman</option>
+                    <option value="mangudai">Mangudai</option>
+                    <option value="mameluke">Mameluke</option>
+                    <option value="samurai">Samurai</option>
+                    <option value="teutonic_knight">Teutonic Knight</option>
+                    <option value="throwing_axeman">Throwing Axeman</option>
+                    <option value="war_elephant">War Elephant</option>
+                    <option value="woad_raider">Woad Raider</option>
+                </select>
+                <input type="button" value="Go!" />
+            </form>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
