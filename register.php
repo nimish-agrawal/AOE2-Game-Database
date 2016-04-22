@@ -11,8 +11,6 @@
 
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 
-  <script type="text/javascript">
-</script>
 
 </head>
 
@@ -28,7 +26,6 @@
   <li><a href="unitsearch.php">Units</a></li>
 
   <ul style="float: right; list-style-type: none;">
-  	<li><a href="index.php">Login</a></li>
   	<li><a href="register.php" class="active">Register</a></li>
 
   </ul>
@@ -95,6 +92,8 @@ if(isset($_POST['register']))
 
   $query = "INSERT INTO player (p_name, gamertag, date_of_birth, civ_name, played, won, rating) VALUES('$pName','$gTag',
   '$dob','$civName','$played', '$won', '$rating')";
+
+  echo "<script type='text/javascript'>window.alert('You are now a Wololo Warrior!')</script>";
   $result = mysql_query($query, $conn) or die('Error'. mysql_error());
 }
 

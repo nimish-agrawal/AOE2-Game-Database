@@ -41,7 +41,6 @@
   <li><a href="unitsearch.php" class="active">Units</a></li>
 
   <ul style="float: right; list-style-type: none;">
-  	<li><a href="index.php">Login</a></li>
   	<li><a href="register.php">Register</a></li>
 
   </ul>

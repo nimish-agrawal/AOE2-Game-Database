@@ -9,6 +9,11 @@
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 </head>
 
@@ -24,7 +29,6 @@
   <li><a href="unitsearch.php">Units</a></li>
 
   <ul style="float: right; list-style-type: none;">
-  	<li><a href="index.php">Login</a></li>
   	<li><a href="register.php">Register</a></li>
 
   </ul>
@@ -33,29 +37,75 @@
 
 <div id="findgame">
 
-<!--   <p>This is your portal to Age of Empires 2 Multiplayer gaming. A solid match making algorithm finds a player closest to your skill level to ensure a match is
-  	never one sided. Enter your Player ID below if you're already registered.<br>
-  	<br>Player ID &nbsp<input type="text" name="playerID"/><br><br>Password&nbsp<input type="password" name="password"/><br><br><br>
-    <a href="#log" id="login">Go</a>
-  	<a href="#newreg" id="new">New User?</a>
-  </p>
- -->
  <div id="pseudo"></div>
-<p id="header">
-  This is your portal to Age of Empires 2 Multiplayer gaming. A solid match making algorithm finds a player closest to your skill level to ensure a match is
-    never one sided. Enter your Player ID below if you're already registered
-</p>
-<div class="form-style-8">
-  <h2>Login</h2>
-  <form>
-    <input type="text" name="gTag" placeholder="Gamer Tag" />
-    <input type="password" name="password" placeholder="Password" />
-    <input type="button" value="Login" />
-  </form>
-</div>
 
+      <div class="row" style="width:400px; height:200px; display:table-cell;">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="../static/game.png">
+              <span class="card-title">Player Search</span>
+            </div>
+            <div class="card-content">
+              <p>Search for a friend or a foe</p>
+            </div>
+            <div class="card-action">
+              <a href="search.php">Go!</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-</div>
+      <div class="row" style="width:400px; height:200px;display:table-cell">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="../static/civs.jpg">
+              <span class="card-title">Search for a Civilization</span>
+            </div>
+            <div class="card-content">
+              <p>Advanced Civilization search</p>
+            </div>
+            <div class="card-action">
+              <a href="civsearch.php">Go!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="width:400px; height:200px; display:table-cell">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="../static/units.jpg">
+              <span class="card-title">Unit Search</span>
+            </div>
+            <div class="card-content">
+              <p>Advanced Unit Search</p>
+            </div>
+            <div class="card-action">
+              <a href="unitsearch.php">Go!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="width:400px; height:200px; display:table-cell">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="../static/register.png">
+              <span class="card-title">Register</span>
+            </div>
+            <div class="card-content">
+              <p>Register yourself!</p>
+            </div>
+            <div class="card-action">
+              <a href="register.php">Go!</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
 </body>
 
