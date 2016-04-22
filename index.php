@@ -17,15 +17,15 @@
 
 <ul class="navigation">
 
-  <li><a href="index" class="active" role="button">Home</a></li>
-  <li><a href="tips" role="button">Tips</a></li>
-  <li><a href="search">Search Player</a></li>
-  <li><a href="civsearch">Civilizations</a></li>
-  <li><a href="unitsearch">Units</a></li>
+  <li><a href="index.php" class="active" role="button">Home</a></li>
+  <li><a href="tips.html" role="button">Tips</a></li>
+  <li><a href="search.php">Search Player</a></li>
+  <li><a href="civsearch.php">Civilizations</a></li>
+  <li><a href="unitsearch.php">Units</a></li>
 
   <ul style="float: right; list-style-type: none;">
-  	<li><a href="index">Login</a></li>
-  	<li><a href="#contact">Contact Us</a></li>
+  	<li><a href="index.php">Login</a></li>
+  	<li><a href="register.php">Register</a></li>
 
   </ul>
 

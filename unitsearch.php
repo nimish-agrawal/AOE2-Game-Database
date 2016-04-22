@@ -33,14 +33,14 @@
 
 <ul class="navigation">
 
-  <li><a href="index">Home</a></li>
-  <li><a href="tips">Tips</a></li>
-  <li><a href="search">Search Player</a></li>
-  <li><a href="civsearch">Civilizations</a></li>
-  <li><a href="unitsearch" class="active">Units</a></li>
+  <li><a href="index.php">Home</a></li>
+  <li><a href="tips.html">Tips</a></li>
+  <li><a href="search.php">Search Player</a></li>
+  <li><a href="civsearch.php">Civilizations</a></li>
+  <li><a href="unitsearch".php class="active">Units</a></li>
 
   <ul style="float: right; list-style-type: none;">
-  	<li><a href="index">Login</a></li>
+  	<li><a href="index.php">Login</a></li>
   	<li><a href="#contact">Contact Us</a></li>
 
   </ul>
