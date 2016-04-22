@@ -48,9 +48,9 @@
 <div class="form-style-8">
   <h2>Login</h2>
   <form>
-    <input type="text" name="gTag" placeholder="Gamer Tag" />
-    <input type="password" name="password" placeholder="Password" />
-    <input type="button" value="Login" />
+    <input type="text" name="gTag" placeholder="Gamer Tag" value={{request.form.gTag}}>
+    <input type="password" name="password" placeholder="Password" value = {{request.form.password}}>
+    <input type="submit" value="Login">
   </form>
 </div>
 
