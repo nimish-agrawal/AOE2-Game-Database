@@ -41,7 +41,22 @@
   <form action="register.php" method='post'>
     <input type="text" name="pName" placeholder="Player Name" />
     <input type="text" name="gTag" placeholder="Gamer Tag" />
-    <input type="text" name="civName" placeholder="Favourite Civilization">
+    <select name="civName">
+      <option value="dummy" selected disabled>Select Favourite Civilization</option>
+      <option value="Britons">Britons</option>
+      <option value="Byzantines">Byzantines</option>
+      <option value="Celts">Celts</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Franks">Franks</option>
+      <option value="Goths">Goths</option>
+      <option value="Japanese">Japanese</option>
+      <option value="Mongols">Mongols</option>
+      <option value="Persians">Persians</option>
+      <option value="Saracens">Saracens</option>
+      <option value="Teutons">Teutons</option>
+      <option value="Turks">Turks</option>
+      <option value="Vikings">Vikings</option>
+    </select>
     <input type="number" name="rating" placeholder="Rating" />
     <input type="date" name="dob" placeholder="Date of Birth(DD-MM-YYYY)"> 
     <input type="number" name="played" placeholder="Number of matches played">
@@ -57,6 +72,8 @@
 </html>
 
 <?php
+
+error_reporting(0);
 
 if(isset($_POST['register']))
 {

@@ -6,6 +6,8 @@
 
     <title>AoX-Home Page</title>
     <link href="../static/style.css" rel="stylesheet" />
+    <link href="../static/table.css" rel="stylesheet"/>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript">
 
@@ -41,7 +43,7 @@
 
         <ul style="float: right; list-style-type: none;">
             <li><a href="index.php">Login</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="register.php">Register</a></li>
 
         </ul>
 
@@ -59,7 +61,7 @@
         <div id="pseudo"></div>
         <div class="form-style-8">
             <h2>Look for a Civilization</h2>
-            <form>
+            <form method="POST" action="civsearch.php">
 
                 <input type="text" name="civ_name" placeholder="Civilization" />
 
@@ -67,10 +69,8 @@
                     <option value="" disabled selected>that has</option>
                     <option value="uniqueunit">Unique Unit</option> <!--Done-->
                     <option value="unit">Unit</option>              <!--Done-->
-                    <option value="unit_all">All units</option>     <!--Done-->
                     <option value="research_unique">Unique Research</option>    <!--Done-->
                     <option value="research">Research</option>          <!--Done-->
-                    <option value="research_all">All researches</option> <!--Done-->
                     <option value="building">Building</option>      <!--Done-->
                 </select>
 
@@ -82,17 +82,17 @@
                             <option value="" disabled selected>Select Unique Unit</option>
                             <option value="berserk">Berserk</option>
                             <option value="cataphract">Cataphract</option>
-                            <option value="chu_ko_nu">Chu Ko Nu</option>
+                            <option value="chu ko nu">Chu Ko Nu</option>
                             <option value="huskarl">Huskarl</option>
                             <option value="janissary">Janissary</option>
                             <option value="longbowman">Longbowman</option>
                             <option value="mangudai">Mangudai</option>
                             <option value="mameluke">Mameluke</option>
                             <option value="samurai">Samurai</option>
-                            <option value="teutonic_knight">Teutonic Knight</option>
-                            <option value="throwing_axeman">Throwing Axeman</option>
-                            <option value="war_elephant">War Elephant</option>
-                            <option value="woad_raider">Woad Raider</option>
+                            <option value="teutonic knight">Teutonic Knight</option>
+                            <option value="throwing axeman">Throwing Axeman</option>
+                            <option value="war elephant">War Elephant</option>
+                            <option value="woad raider">Woad Raider</option>
                         </select>
                     </div>
                 </div>
@@ -104,41 +104,12 @@
                         <select name="unit_sel">
                             <option value="" disabled selected>Select Unit</option>
                             <option value="arbalest">Arbalest</option>
-                            <option value="bombard_cannon">Bombard Cannon</option>
+                            <option value="bombard cannon">Bombard Cannon</option>
                             <option value="camel">Camel</option>
-                            <option value="cannon_galleon">Cannon Galleon</option>
-                            <option value="cavalier">Cavalier</option>
-                            <option value="champion">Champion</option>
-                            <option value="elite_cannon_galleon">Elite Cannon Galleon</option>
-                            <option value="fishing_ship">Fishing Ship</option>
-                            <option value="hand_cannoneer">Hand Cannoneer</option>
-                            <option value="heavy_camel">Heavy Camel</option>
-                            <option value="heavy_cavalry_archer">Heavy Cavalry Archer</option>
-                            <option value="heavy_demolition_ship">Heavy Demolition Ship</option>
-                            <option value="heavy_scorpion">Heavy Scorpion</option>
-                            <option value="light_cavalry">Light Cavalry</option>
-                            <option value="onager">Onager</option>
+                            <option value="elite cannon galleon">Elite Cannon Galleon</option>
                             <option value="paladin">Paladin</option>
-                            <option value="pikeman">Pikeman</option>
-                            <option value="siege_onager">Siege Onager</option>
-                            <option value="siege_ram">Siege Ram</option>
-                            <option value="two_handed_swordsman">Two-Handed Swordsman</option>
                         </select>
 
-                    </div>
-                </div>
-
-                <!--Search based on all units of a building-->
-                <div class="container">
-                    <div class="unit_all">
-                        <select name="units_of_build">
-                            <option value="" disabled selected>of Building</option>
-                            <option value="archery_range">Archery Range</option>
-                            <option value="barracks">Barracks</option>
-                            <option value="dock">Dock</option>
-                            <option value="siege_workshop">Siege Workshop</option>
-                            <option value="stable">Stable</option>
-                        </select>
                     </div>
                 </div>
 
@@ -149,11 +120,11 @@
                             <option value="" disabled selected>Select Unique Research</option>
                             <option value="anarchy">Anarchy</option>
                             <option value="artillery">Artillery</option>
-                            <option value="bearded_axe">Bearded Axe</option>
+                            <option value="bearded axe">Bearded Axe</option>
                             <option value="berserkergang">Berserkergang</option>
                             <option value="crenellations">Crenellations</option>
                             <option value="drill">Drill</option>
-                            <option value="furor_celtica">Furor Celtica</option>
+                            <option value="furor celtica">Furor Celtica</option>
                             <option value="katapurato">Katapurato</option>
                             <option value="logistica">Logistica</option>
                             <option value="mahaouts">Mahaouts</option>
@@ -167,61 +138,13 @@
                 <!--Search based on a Research-->
                 <div class="container">
                     <div class="research">
-                        <select name="research">
+                        <select name="sel_research">
                             <option value="" disabled selected>Select Research</option>
                             <option value="architecture">Architecture</option>
                             <option value="atonement">Atonement</option>
-                            <option value="blast_furnace">Blast Furnace</option>
-                            <option value="block_printing">Block Printing</option>
+                            <option value="block printing">Block Printing</option>
                             <option value="bloodlines">Bloodlines</option>
-                            <option value="bracer">Bracer</option>
-                            <option value="crop_rotation">Crop Rotation</option>
-                            <option value="dry_dock">Dry Dock</option>
-                            <option value="gold_shaft_mining">Gold-Shaft Mining</option>
-                            <option value="guilds">Guilds</option>
-                            <option value="heated_shot">Heated Shot</option>
-                            <option value="herbal_medicine">Herbal Medicine</option>
-                            <option value="heresy">Heresy</option>
-                            <option value="hoardings">Hoardings</option>
-                            <option value="horse_collar">Horse Collar</option>
-                            <option value="husbandry">Husbandry</option>
-                            <option value="illumination">Illuminations</option>
-                            <option value="masonry">Masonry</option>
-                            <option value="plate_mail_armor">Plate Mail Armor</option>
-                            <option value="redemption">Redemption</option>
-                            <option value="ring_archer_armor">Ring Archer Armor</option>
-                            <option value="sanctity">Sanctity</option>
-                            <option value="sappers">Sappers</option>
-                            <option value="shipwright">Shipwright</option>
-                            <option value="siege_engineers">Siege Engineers</option>
-                            <option value="stone_shaft_mining">Stone-Shaft Mining</option>
-                            <option value="theocracy">Theocracy</option>
-                            <option value="thumb_ring">Thumb Ring</option>
-                            <option value="treadmill_crane">Treadmill Crane</option>
-                            <option value="two_man_saw">Two-Man Saw</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!--Search based on all researches of a building-->
-                <div class="container">
-                    <div class="research_all">
-                        <select name="res_buildings">
-                            <option value="" selected disabled>of Building</option>
-                            <option value="archery_range">Archery Range</option>
-                            <option value="barracks">Barracks</option>
-                            <option value="blacksmith">Blacksmith</option>
-                            <option value="castle">Castle</option>
-                            <option value="dock">Dock</option>
-                            <option value="lumber_camp">Lumber Camp</option>
-                            <option value="market">Market</option>
-                            <option value="mill">Mill</option>
-                            <option value="mining_camp">Mining Camp</option>
-                            <option value="monastery">Monastery</option>
-                            <option value="siege_workshop">Siege Workshop</option>
-                            <option value="stable">Stable</option>
-                            <option value="town_center">Town Center</option>
-                            <option value="university">University</option>
+                            <option value="crop rotation">Crop Rotation</option>
                         </select>
                     </div>
                 </div>
@@ -231,19 +154,15 @@
                     <div class="building">
                         <select name="civ_build">
                             <option value="" disabled selected>Select Building</option>
-                            <option value="bombard_tower">Bombard Tower</option>
-                            <option value="fortified_wall">Fortified Wall</option>
-                            <option value="gate">Gate</option>
-                            <option value="guard_tower">Guard Tower</option>
+                            <option value="bombard tower">Bombard Tower</option>
+                            <option value="fortified wall">Fortified Wall</option>
                             <option value="keep">Keep</option>
-                            <option value="stable">Stable</option>
-                            <option value="stone_wall">Stone Wall</option>
                         </select>
                     </div>
                 </div>
 
 
-                        <input type="button" value="Go!" />
+                        <input type="submit" name="search" value="Go!" />
             </form>
         </div>
 
@@ -253,3 +172,83 @@
 </body>
 
 </html>
+
+<?php
+
+    error_reporting(0);
+    
+    if(isset($_POST['search']))
+    {
+
+        $username="root";
+        $password="tdkdetective";
+        $database="aoe2db";
+
+        $conn = mysql_connect('localhost',$username,$password);
+
+        @mysql_select_db($database) or die( "Unable to select database");
+
+        if($_POST['civ_name'] != '')
+        {
+            $civName = $_POST['civ_name'];
+            $query = "SELECT * from civilization where civ_name = '$civName'";
+        }
+
+        else
+        {
+            if($_POST['object'] == "uniqueunit")
+            {
+                $un_unit = $_POST['unique_unit'];
+                $query = "SELECT * from civilization where civilization.unique_unit = '$un_unit'";
+            }
+
+            else if($_POST['object'] == "unit")
+            {
+                $sel_unit = $_POST['unit_sel'];
+                $query = "SELECT civilization.civ_name, civilization.unique_unit, civilization.unique_tech, civilization.wonder from civilization, civ_has_unit as look where look.un_name = '$sel_unit' and look.civ_name = civilization.civ_name";
+            }
+
+            //enter code for "all units of building"
+
+            else if($_POST['object'] == 'research_unique')
+            {
+                $un_res = $_POST['res_unique'];
+                $query = "SELECT * from civilization where unique_tech = '$un_res'";    
+            }
+
+            else if($_POST['object'] == 'research')
+            {
+                $research = $_POST['sel_research'];
+                $query = "SELECT civilization.civ_name, civilization.unique_unit, civilization.unique_tech, civilization.wonder from civilization, civ_has_research as look where look.res_name = '$research' and civilization.civ_name = look.civ_name";
+            }
+
+            //enter code for "all researches of building"
+
+            else if($_POST['object'] == 'building')
+            {
+                $building = $_POST['civ_build'];
+                $query = "SELECT civilization.civ_name, civilization.unique_unit, civilization.unique_tech, civilization.wonder from civilization, civ_has_buildings as look where look.build_name = '$building' and civilization.civ_name = look.civ_name";
+            }
+        }
+
+        $results = mysql_query($query, $conn) or die("Error:".mysql_error());
+
+        if(mysql_num_rows($results) == 0)
+        echo "No such civilization found";
+
+        else
+        {
+            echo "<div class='CSSTableGenerator'><table>
+                    <tr>
+                        <th>Civilization<th>Unique Unit<th>Unique Technology<th>Wonder
+                    </tr>";
+            while ($row = mysql_fetch_array($results)) 
+            {
+              echo "<tr><td>". $row['civ_name'], "<td>". $row['unique_unit']. "<td>". $row['unique_tech']. "<td>". $row['wonder']. "</tr>";
+            }
+            echo "</table> </div>";
+        }
+
+    }
+
+?>

@@ -8,7 +8,7 @@
 	<link href="../static/style.css" rel="stylesheet"/>
   <link rel="stylesheet" type="text/css" href="../static/search.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-
+  <link href="../static/table.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 
   <script type="text/javascript">
@@ -29,8 +29,7 @@
 
   <ul style="float: right; list-style-type: none;">
   	<li><a href="index.php">Login</a></li>
-  	<li><a href="register.php">Contact Us</a></li>
-
+  	<li><a href="register.php">Register</a></li>
   </ul>
 
 </ul>
@@ -63,6 +62,8 @@
 
 <?php
 
+  error_reporting(0);
+
   if(isset($_POST['search']))
   {
     $username="root";
@@ -74,17 +75,105 @@
     @mysql_select_db($database) or die( "Unable to select database");
 
 
-    if(isset($_POST['gTag']))
+    if($_POST['gTag'] != '')
     {
       $gTag = $_POST['gTag'];
 
       $query = "SELECT * from player where gamertag = '$gTag'";
-      $results = mysql_query($query, $conn) or die("Error: " .mysql_erro());
+      $results = mysql_query($query, $conn) or die("Error: " .mysql_error());
 
-     while($row = mysql_fetch_array($results))
-     {
-          echo $row['p_name'];
-     }      
+      if(mysql_num_rows($results) == 0)
+        echo "No such player found";
+
+      else
+      {
+        echo "<div class='CSSTableGenerator'><table>
+              <tr>
+                <th>Player Name<th>Gamer Tag<th>Date of Birth<th>Favourite Civilization<th>Played<th>Won<th>Rating
+              </tr>";
+        while ($row = mysql_fetch_array($results)) 
+        {
+          echo "<tr><td>". $row['p_name']. "<td>". $row['gamertag']. "<td>". $row['date_of_birth']. "<td>". $row['civ_name']. "<td>". $row['played']. "<td>". $row['won']. "<td>". $row['rating']. "</tr>";
+        }
+        echo "</table></div>";
+      }
+    }
+
+    else
+    {
+      $tag = 0;
+
+      if($_POST['name'] != '')
+      {
+        $tag = 1;
+        $name = $_POST['name'];
+      }
+
+      if($_POST['rating'] != '')
+      {
+        $tag = $tag * 10 + 2;
+        $rating = intval($_POST['rating']);
+        $lower = $rating - 50;
+        $upper = $rating + 50;
+
+      }
+      if($_POST['dob'] != '')
+      {
+        $tag = $tag * 10 + 3;
+        $dob = $_POST['dob'];
+      }
+
+      if($tag == 1)
+      {
+
+        $query = "SELECT * from player where p_name = '$name'";
+      }
+
+      if($tag == 2)
+      {
+
+        $query = "SELECT * from player where rating between '$lower' and '$upper'";
+      }
+
+      if($tag == 3)
+      {
+        $query = "SELECT * from player where date_of_birth = '$dob'";
+      }
+
+      if($tag == 12)
+      {
+        $query = "SELECT * from player where p_name = '$name' and rating between '$lower' and '$upper'";
+      }
+
+      if($tag == 13)
+      {
+        $query = "SELECT * from player where p_name = '$name' and date_of_birth = '$dob'";
+      }
+
+      if($tag == 23)
+      {
+          $query = "SELECT * from player where date_of_birth = '$dob' and rating between '$lower' and '$upper'";
+      }
+
+
+      $results = mysql_query($query, $conn) or die("Error:".mysql_error());
+
+      if(mysql_num_rows($results) == 0)
+        echo "No such player found";
+
+      else
+      {
+        echo "<div class='CSSTableGenerator'><table>
+              <tr>
+                <th>Player Name<th>Gamer Tag<th>Date of Birth<th>Favourite Civilization<th>Played<th>Won<th>Rating
+              </tr>";
+        while ($row = mysql_fetch_array($results)) 
+        {
+          echo "<tr><td>". $row['p_name']. "<td>". $row['gamertag']. "<td>". $row['date_of_birth']. "<td>". $row['civ_name']. "<td>". $row['played']. "<td>". $row['won']. "<td>". $row['rating']. "</tr>";
+        }
+        echo "</table></div>";
+      }
+
     }
   
   }
